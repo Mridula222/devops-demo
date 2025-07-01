@@ -1,33 +1,12 @@
-<!-- kubectl taint nodes worker-node1 environment=dev:NoSchedule -->
+# React + Vite
 
-kubectl taint nodes ip-192-168-57-127.ap-south-1.compute.internal environment=dev
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Command to remove taint from the node
+Currently, two official plugins are available:
 
-kubectl taint node <node-name> environment=dev:NoSchedule- 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx-test
-  labels:
-    env: test-env
-spec:
-  containers:
-  - name: nginx
-    image: nginx:latest
-    imagePullPolicy: IfNotPresent
-    resources:
-      requests:
-        memory: "128Mi"
-        cpu: "250m"
-      limits:
-        memory: "512Mi"
-        cpu: "500m"
-  tolerations:
-  - key: "gpu"
-    operator: "Equal"
-    value: "true"
-    effect: "NoSchedule"
-```
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
